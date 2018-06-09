@@ -5,8 +5,6 @@ import pandas as pd
 import os
 import sys
 
-os.chdir(os.path.dirname(sys.argv[0]))
-
 
 def is_connected():
 #     try:
@@ -15,12 +13,9 @@ def is_connected():
 #     except OSError:
 #         pass
 #     return False
-    
+    # test if works with even/odd minutes    
     return pd.datetime.now().minute % 2 == 0
 
-# init previous state: 
-# state,time
-# True,2018-01-01 11:11:11.111111
 previous_state = pd.read_csv('../data/previous_state.csv')
 
 # first instance of the connection going down:
